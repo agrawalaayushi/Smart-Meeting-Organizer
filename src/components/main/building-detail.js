@@ -22,21 +22,21 @@ class BuildingDetail extends Component {
     console.log(buildings)
     return (
       <div className='building-info-wrapper'>
-          <div>
+          <div className="info-box">
              <div className="sub-heading">Buildings</div>
              <div className="sub-content">Total {buildings && buildings.length}</div>
           </div>
-          <div>
+          <div className="info-box">
              <div className="sub-heading">Rooms</div>
              <div className="sub-content">Total {buildings &&  buildings.length}</div>
              <div className="sub-content">Free Now { buildings && buildings.length}</div>
           </div>
-          <div>
+          <div className="info-box meeting">
              <div className="sub-heading">Meetings</div>
              <div className="sub-content">Total { buildings &&  buildings.length} Today</div>
              <div className="sub-content">Total {buildings &&  buildings.length} Going on now</div>
           </div>
-        <button type="button" onClick={this.addMeeting}> Add a Meeting </button>
+        <button type="button" className="primary-btn" onClick={this.addMeeting}> Add a Meeting </button>
       </div>
     )
   }
