@@ -1,5 +1,4 @@
-
-# Gallery App: Source Flickr
+# Meeting Organiser App
 
 ### Requirement
 Make sure you have these Node(\^8.11.1), npm(v5.6.0) and yarn(\^1.6.0) are essential to run this project.
