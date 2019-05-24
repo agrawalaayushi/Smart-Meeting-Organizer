@@ -25,12 +25,12 @@ const AuthToken = 'a123gjhgjsdf6576';
     .then(res => {
       const successResponse = res.data
       console.log(successResponse)
-      // dispatch(receiveBuildingListResponse(successResponse));
+      dispatch(receiveBuildingListResponse(successResponse));
     })
     .catch(error => {
       const errorResponse = error;
       console.log(errorResponse)
-      // dispatch(receiveBuildingListResponse(errorResponse));
+      dispatch(receiveBuildingListResponse(errorResponse));
     });
 };
 

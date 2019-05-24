@@ -12,6 +12,7 @@ export function requestBuildingList(params) {
 
 export function receiveBuildingListResponse(response) {
   response.buildingListResponse = response;
+  console.log(response)
   return{
     type: ActionTypes.RECEIVE_BUILDING_LIST_RESPONSE,
     response

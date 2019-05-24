@@ -14,7 +14,7 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
 
     case ActionTypes.RECEIVE_BUILDING_LIST_RESPONSE: {
-      state = state.set('buildingListResponse', action.response.buildingListResponse);
+      state = state.set('buildingListResponse', action.response.buildingListResponse.Buildings);
       return state;
     }
     default:

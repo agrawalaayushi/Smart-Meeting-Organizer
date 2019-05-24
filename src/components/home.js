@@ -4,6 +4,7 @@ import { Header } from './Header/header';
 
 import { requestBuildingList } from '../actions/action';
 import '../styles/app.scss';
+import BuildingDetail from './main/building-detail';
 
 class Home extends Component {
 
@@ -14,12 +15,13 @@ class Home extends Component {
   componentDidMount() {
     this.fetchAllBuildings()
   }
-  
+
   render() {
     const { buildingListResponse } = this.props;
     return (
       <div className="App">
         <Header />
+        <BuildingDetail buildings={buildingListResponse}/>
       </div>
     );
   }
