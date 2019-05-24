@@ -18,7 +18,7 @@ class BuildingDetail extends Component {
   // Lifecycle
   //-----------------------------------
   render() {
-    const { buildings } = this.props;
+    const { buildings, rooms } = this.props;
     console.log(buildings)
     return (
       <div className='building-info-wrapper'>
@@ -28,7 +28,7 @@ class BuildingDetail extends Component {
           </div>
           <div className="info-box">
              <div className="sub-heading">Rooms</div>
-             <div className="sub-content">Total {buildings &&  buildings.length}</div>
+             <div className="sub-content">Total {rooms &&  rooms.length}</div>
              <div className="sub-content">Free Now { buildings && buildings.length}</div>
           </div>
           <div className="info-box meeting">

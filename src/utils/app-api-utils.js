@@ -1,5 +1,5 @@
 import {
-  receiveBuildingListResponse
+  receiveBuildingListResponse, receiveRoomListResponse
 } from '../actions/action';
 
 const url = "http://smart-meeting.herokuapp.com/";
@@ -33,4 +33,37 @@ const AuthToken = 'a123gjhgjsdf6576';
       dispatch(receiveBuildingListResponse(errorResponse));
     });
 };
+
+ // GET ALL BUILDINGS
+ export function getRooms(dispatch, params) {
+  const query = 
+  `{
+    MeetingRooms{
+    name
+    floor
+    building{name}
+    meetings{title}
+   }
+   }`
+ ;
+ const opts = {
+   method: "POST",
+   body: JSON.stringify({query}), 
+   headers: { 'token': AuthToken, 'Content-Type': 'application/json' },
+ };
+ fetch(url, opts)
+   .then(res => res.json())
+   .then(res => {
+     const successResponse = res.data
+     console.log("getRooms",res)
+     dispatch(receiveRoomListResponse(successResponse));
+   })
+   .catch(error => {
+     const errorResponse = error;
+     console.log(errorResponse)
+     dispatch(receiveRoomListResponse(errorResponse));
+   });
+};
+
+
 

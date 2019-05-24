@@ -1,6 +1,6 @@
 import ActionTypes from '../constants/action-type';
 import {
-  getBuildings
+  getBuildings, getRooms
 } from '../utils/app-api-utils';
 
  // GET ALL BUILDINGS
@@ -18,3 +18,19 @@ export function receiveBuildingListResponse(response) {
     response
   }
 };
+
+ // GET ALL ROOMS
+ export function requestRoomList(params) {
+  return(dispatch)=>{
+    getRooms(dispatch, params);
+  }
+};
+
+export function receiveRoomListResponse(response) {
+  response.roomListResponse = response;
+  return{
+    type: ActionTypes.RECEIVE_ROOM_LIST_RESPONSE,
+    response
+  }
+};
+

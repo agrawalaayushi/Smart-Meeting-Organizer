@@ -12,9 +12,13 @@ const reducer = (state = initialState, action) => {
   }
 
   switch (action.type) {
-
+    
     case ActionTypes.RECEIVE_BUILDING_LIST_RESPONSE: {
       state = state.set('buildingListResponse', action.response.buildingListResponse.Buildings);
+      return state;
+    }
+    case ActionTypes.RECEIVE_ROOM_LIST_RESPONSE: {
+      state = state.set('roomListResponse', action.response.roomListResponse);
       return state;
     }
     default:

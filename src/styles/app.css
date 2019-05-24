@@ -1,5 +1,27 @@
+.header-view {
+  height: 70px;
+  width: 100%;
+  color: rgba(0, 0, 0, 0.87);
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: #1a51a8;
+  box-shadow: 2px 3.5px 9.5px 0.5px rgba(107, 106, 128, 0.1);
+  z-index: 1000;
+  padding: auto;
+  display: flex; }
+  .header-view .header-title {
+    text-transform: capitalize;
+    font-size: 20px;
+    text-align: center;
+    text-shadow: 1.5px 2.6px 5px rgba(40, 40, 74, 0.2);
+    margin: auto;
+    color: white; }
+
 .building-info-wrapper {
-  background-color: white; }
+  background-color: white;
+  width: 400px;
+  margin: 40px auto; }
   .building-info-wrapper .info-box {
     min-height: 55px;
     border: 1px solid black;
@@ -10,7 +32,10 @@
   .building-info-wrapper .info-box.meeting {
     min-height: 80px; }
   .building-info-wrapper .primary-btn {
-    background-color: #002642;
+    background-color: #1a51a8;
     color: white;
     font-size: 16px;
-    font-weight: 600; }
+    width: 100%;
+    font-weight: 600;
+    margin: 3px 0;
+    min-height: 50px; }
