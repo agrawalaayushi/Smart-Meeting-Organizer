@@ -1,9 +1,19 @@
 import ActionTypes from '../constants/action-type';
+import {
+  getBuildings
+} from '../utils/app-api-utils';
 
-export const simpleAction = () => dispatch => {
-  debugger
-  dispatch({
-   type: ActionTypes.SIMPLE_ACTION,
-   payload: 'result_of_simple_action'
-  })
- }
+ // GET ALL BUILDINGS
+export function requestBuildingList(params) {
+  return(dispatch)=>{
+    getBuildings(dispatch, params);
+  }
+};
+
+export function receiveBuildingListResponse(response) {
+  response.buildingListResponse = response;
+  return{
+    type: ActionTypes.RECEIVE_BUILDING_LIST_RESPONSE,
+    response
+  }
+};

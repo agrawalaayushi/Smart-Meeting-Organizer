@@ -1,37 +1,25 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Header } from './Header/header';
 
-// import logo from './logo.svg';
-import logo from '../logo.svg';
-// import { simpleAction } from './actions/action';
-import { simpleAction } from '../actions/action';
+import { requestBuildingList } from '../actions/action';
 import '../styles/app.scss';
 
 class Home extends Component {
 
-  simpleAction(event) {
-    debugger
-    this.props.simpleAction();
+  fetchAllBuildings(event) {
+    this.props.fetchAllBuildings();
    }
 
+  componentDidMount() {
+    this.fetchAllBuildings()
+  }
+  
   render() {
-    const { simpleActionResponse } = this.props;
-    debugger
+    const { buildingListResponse } = this.props;
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <button onClick={(e) => this.simpleAction(e)}>Test redux action</button>
-        <pre>
-          {
-            simpleActionResponse && JSON.stringify(this.props)
-          }
-        </pre>
+        <Header />
       </div>
     );
   }
@@ -40,11 +28,11 @@ class Home extends Component {
 
 const mapStateToProps = state => ({
   ...state,
-  simpleActionResponse: state.reducer.get("simpleActionResponse")
+  buildingListResponse: state.reducer.get("buildingListResponse")
 })
 
  const mapDispatchToProps = dispatch => ({
-  simpleAction: () => dispatch(simpleAction())
+  fetchAllBuildings: () => dispatch(requestBuildingList())
  })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
